@@ -1,1 +1,1 @@
-document.write(WORLDBANK.PER.indicators[0].countryCode)
+window.example = example;
