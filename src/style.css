@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+}
+
+#peru-write{
+    border: solid 2px red;
+    display: inline;
+    padding: 5px 50px;
+}
+
+#mexico-write{
+    border: solid 2px red;
+    display: inline;
+    padding: 5px 50px;
+}
+
+#brasil-write{
+    border: solid 2px red;
+    display: inline;
+    padding: 5px 50px;
+}
+
+#chile-write{
+    border: solid 2px red;
+    display: inline;
+    padding: 5px 50px;
+}
+
+button{
+    margin: 20px;
+}
