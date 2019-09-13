@@ -5,23 +5,26 @@ let buttonMexico = document.getElementById("btn-mexico");
 let buttonBrasil = document.getElementById("btn-brasil");
 let buttonChile = document.getElementById("btn-chile");
 
-let xuxu = document.getElementById("peru-write")
+/*
+ir no HTML e pegar o que vc quer filtrar
+chamar funcao de filtro lá do data.js ---- filtro(indice, "BRA")
+pega o retorno da funcao filtro lã do data e exibe*/
 
 buttonPeru.addEventListener("click", () => {
-document.write(banana)
+    document.getElementById("peru-write").innerHTML = `esse é o nome do pais ${window.data.peru[0]}`
 });
 
 
 buttonMexico.addEventListener("click", () => {
-
+    document.getElementById("mexico-write").innerHTML = `esse é o nome do pais ${window.data.mexico[0]}`
 });
 
 
 buttonBrasil.addEventListener("click", () => {
-
+    document.getElementById("brasil-write").innerHTML = `esse é o nome do pais ${window.data.brasil[0]}`
 });
 
 
 buttonChile.addEventListener("click", () => {
-
+    document.getElementById("chile-write").innerHTML = `esse é o nome do pais ${window.data.chile[0]}`
 });
