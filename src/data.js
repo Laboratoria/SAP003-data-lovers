@@ -1,90 +1,155 @@
-// esta é uma função de exemplo
-// veja como agregamos a função ao objeto global window
-// const example = () => {
-//   return "example";
-// };
-// window.example = example;
-////////////////////////////////////////////////////
+//MAIN JS
+const printDataPer = document.getElementById("select-peru")
+const printYearPer = document.getElementById("year-peru")
 
-const dados = WORLDBANK
+const printDataMex = document.getElementById("select-mexico")
+const printYearMex = document.getElementById("year-mexico")
 
-const peruCountry = WORLDBANK.PER.indicators
-const mexicoCountry = WORLDBANK.MEX.indicators
-const brasilCountry = WORLDBANK.BRA.indicators
-const chileCountry = WORLDBANK.CHL.indicators
+const printDataBra = document.getElementById("select-brasil")
+const printYearBra = document.getElementById("year-brasil")
 
-const paisEscolhido = "BRA"
+const printDataChl = document.getElementById("select-chile")
+const printYearChl = document.getElementById("year-chile")
 
-// for (let pais in dados){
-//   if (paisEscolhido === "BRA") {
-//     const dadosPais = dados[pais].indicators
-//     dadosPais.map(dado => console.log(dado.indicatorName))
-//   }
-// }
+//DATA.JS
+let dado = WORLDBANK
 
-const selectBra = document.getElementById("indices")
+const peruCounty = "PER"
+const peruDatas = dado[peruCounty].indicators
+const yearPeruData = peruDatas[0].data
 
-if (paisEscolhido === "BRA") {
-  const dadosPais = dados[paisEscolhido].indicators
-  selectBra.innerHTML += `${dadosPais.map(dado => `<option>${dado.indicatorName}</option>`)}`
+const mexicoCountry = "MEX"
+const mexDatas = dado[mexicoCountry].indicators
+const yearMexicoData = mexDatas[0].data
+
+const brasilCountry = "BRA"
+const braDatas = dado[brasilCountry].indicators
+const yearBrasilData = braDatas[0].data
+
+const chileCountry = "CHL"
+const chlDatas = dado[chileCountry].indicators
+const yearChileData = chlDatas[0].data
+
+
+countryDatas = () => {
+  peruDatas.map((elem) => {
+    printDataPer.innerHTML += `<option>${elem.indicatorName}</option>`
+  })
+  for (item of Object.keys(yearPeruData)){
+    printYearPer.innerHTML += `<option>${item}</option>`
+  }
+  
+  mexDatas.map((elem) => {
+    printDataMex.innerHTML += `<option> ${elem.indicatorName}</option>`
+  })
+  for (item of Object.keys(yearMexicoData)){
+    printYearMex.innerHTML += `<option>${item}</option>`
   }
 
-//function filtro(tipoDeFiltro, pais){
-//  return resultado filtrado
-//}
+  braDatas.map((elem) => {
+    printDataBra.innerHTML += `<option> "${elem.indicatorName}"</option>`
+  })
+  for (item of Object.keys(yearBrasilData)){
+    printYearBra.innerHTML += `<option>${item}</option>`
+  }
+
+  chlDatas.map((elem) => {
+    printDataChl.innerHTML += `<option>${elem.indicatorName}</option>`
+  })
+  for (item of Object.keys(yearChileData)){
+    printYearChl.innerHTML += `<option>${item}</option>`
+  }
+}
+countryDatas();
 
 
-const peru = peruCountry.map((peruData) => {  
-  return peruData.countryName;
+//countryYears = () => {
+  
+  // dadosMex.map(year => {
+  //   for(item of Object.keys(dadosyearMex)){
+  //     yearMex.innerHTML +=`<option> "${item}"</option>`}
+  // })
+  // dadosBra.map(year => {
+  //   for(item of Object.keys(dadosyearBra)){
+  //     yearBra.innerHTML +=`<option> "${item}"</option>`}
+  // })
+  // dadosChl.map(year => {
+  //   for(item of Object.keys(dadosyearChl)){
+  //     yearChl.innerHTML +=`<option> "${item}"</option>`}
+  // })
+//};  
+
+
+//console.log(countryYears());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+let obj = {
+  artista: "Anitta",
+  titulo: "Goal",
+  duracao: 150
+}
+
+function objectToArray(object) {
+  let result = []
+  for(key of Object.keys(object)){
+    result.push(
+      [key, object[key]]
+    )
+  }
+  return result;
+}
+console.log(objectToArray(obj))
+*/
+
+
+
+
+
+
+
+/*
+const eggsPokemon = pokes.filter(function(element){
+  return element.egg == "2 km"
+
+
 });
-//console.log(peru)
 
-const mexico = mexicoCountry.map((mexicoData) => {
-  return mexicoData.countryName;
-})
+console.log(eggsPokemon)
 
+var heroes = [
+	{name: "batman", franchise: "DC"},
+	{name: "Ironman", franchise: "Marvel"},
+	{name: "Thor", franchise: "Marvel"},
+	{name: "Superman", franchise: "DC"}
+];
 
-const brasil = brasilCountry.map((brasilData) => {
-  return brasilData.countryName;
-})
+var marvelHeroes =  heroes.filter(function(hero) {
+	console.log(hero.franchise == "Marvel");
+});
 
-const chile = chileCountry.map((chileData) => {
-  return chileData.countryName;
-})
-
-
-window.data = {
-  peru: peru,
-  mexico: mexico,
-  brasil: brasil,
-  chile: chile
-}
-
-
-
-
-/*
-const trazerPaises = (pais) => {
-  pais.map(nomePais => {
-    console.log(nomePais.countryName);})
-
-}
-
-trazerPaises(mexicoCountry);
-trazerPaises(brasilCountry);
 */
+//dadosYearPer[0].data
+//  dadosMex.map(elem => {selectMex.innerHTML +=`<option> ${elem.indicatorName}</option>`})
 
-/*
-chileData = () => {
+//  dadosBra.map(elem => {selectBra.innerHTML +=`<option> ${elem.indicatorName}</option>`})
 
-  chileCountry.map(elem => console.log(elem.indicatorCode));
-
-};
-console.log(chileData());
-*/
-
-/*
-for (let banana in peruCountry){
-  peruCountry.map(elem => console.log(elem.indicatorName));
-}
- }*/
+//  dadosChl.map(elem => {selectChl.innerHTML +=`<option> ${elem.indicatorName}</option>`})
