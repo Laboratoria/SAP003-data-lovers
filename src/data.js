@@ -14,20 +14,16 @@ const printYearChl = document.getElementById("year-chile")
 //DATA.JS
 let dado = WORLDBANK
 
-const peruCounty = "PER"
-const peruDatas = dado[peruCounty].indicators
+const peruDatas = dado.PER.indicators
 const yearPeruData = peruDatas[0].data
 
-const mexicoCountry = "MEX"
-const mexDatas = dado[mexicoCountry].indicators
+const mexDatas = dado.MEX.indicators
 const yearMexicoData = mexDatas[0].data
 
-const brasilCountry = "BRA"
-const braDatas = dado[brasilCountry].indicators
+const braDatas = dado.BRA.indicators
 const yearBrasilData = braDatas[0].data
 
-const chileCountry = "CHL"
-const chlDatas = dado[chileCountry].indicators
+const chlDatas = dado.CHL.indicators
 const yearChileData = chlDatas[0].data
 
 
