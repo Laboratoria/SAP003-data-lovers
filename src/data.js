@@ -14,6 +14,14 @@ function getValue (key, value) {
   return RICKANDMORTY.results.filter( persona => persona[key] === value );
 }
 
+function getAllName(data) {
+  let allName = []
+  for (let elements of data) {
+      allName.push(elements)
+  }
+return (allName.sort());
+ 
+}
 // function name() {
 //   for (let i=0; i <= RICKANDMORTY.results.length; i++) {
 //     RICKANDMORTY.results[i].name;
@@ -22,6 +30,7 @@ function getValue (key, value) {
 // }
 
 window.data = {
-  getValue
+  getValue,
+  getAllName,
 };
 

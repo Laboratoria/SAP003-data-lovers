@@ -1,5 +1,8 @@
 const tela = document.getElementById("lista");
+const data = RICKANDMORTY.results;
 
+
+document.getElementById("btn-name-a-z").addEventListener("click", filterAlphabetic);
 document.getElementById("btn-gender-fem").addEventListener("click", filterFemale);
 document.getElementById("btn-gender-male").addEventListener("click", filterMale);
 document.getElementById("btn-gender-unknown").addEventListener("click", filterGenderUnknown);
@@ -55,4 +58,12 @@ function filterAlive() {
 function filterStatusUnknown() {
   render(window.data.getValue("status", "unknown"));
 }
+
+function filterAlphabetic() {
+  return (window.data.getAllName("name"));
+}
+ console.log(filterAlphabetic);
+ 
+
+
 
