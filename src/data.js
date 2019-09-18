@@ -11,10 +11,10 @@ const selectYearBra = document.getElementById("year-brasil")
 const selectDataChl = document.getElementById("select-chile")
 const selectYearChl = document.getElementById("year-chile")
 
-//DATA.JS
 
-const peruDatas = WORLDBANK.PER.indicators
-const yearPeruData = peruDatas[0].data
+//DATA.JS
+const perDatas = WORLDBANK.PER.indicators
+const yearPeruData = perDatas[0].data
 
 const mexDatas = WORLDBANK.MEX.indicators
 const yearMexicoData = mexDatas[0].data
@@ -32,7 +32,7 @@ const btnMex = document.getElementById("btn-submit-mex")
 const btnChl = document.getElementById("btn-submit-chl")
 
 
-btnPer.addEventListener("click", filterInfosPeru);
+//btnPer.addEventListener("click", filterInfosPeru);
 btnBra.addEventListener("click", filterInfosBrasil);
 btnMex.addEventListener("click", filterInfosMexico);
 btnChl.addEventListener("click", filterInfosChile);
@@ -41,47 +41,49 @@ function filterInfosPeru(e) {
   e.preventDefault();
   const dataPerValue = selectDataPer.value
   const yearPerValue = selectYearPer.value
-  const objIndice = peruDatas.filter(indicador => indicador.indicatorName === dataPerValue)
-  objIndice.map(item => console.log(item.data[yearPerValue]))
+  filterTodos(perDatas, dataPerValue, yearPerValue);
+  //const objIndice = perDatas.filter(indicador => indicador.indicatorName === dataPerValue)
+  //objIndice.map(item => console.log(item.data[yearPerValue]))
 }
 
 function filterInfosBrasil(e) {
   e.preventDefault();
-  const dataBraValue = selectDataBra.value
-  const yearBraValue = selectYearBra.value
-  const objIndice = braDatas.filter(indicador => indicador.indicatorName === dataBraValue)
-  console.log(objIndice)
-  objIndice.map(item => console.log(item.data[yearBraValue]))
+  const dataBraValue = selectDataBra.value;
+  const yearBraValue = selectYearBra.value;
+  filterTodos(braDatas, dataBraValue, yearBraValue);
+
+  // console.log(dataBraValue, yearBraValue)
+  // const objIndice = braDatas.filter(indicador => indicador.indicatorName === dataBraValue)
+  // console.log(objIndice)
+  // objIndice.map(item => console.log(item.data[yearBraValue]))
 }
-
-// function filterInfosBrasil(e) {
-//   e.preventDefault();
-//   const dataBraValue = selectDataBra.value
-//   const yearBraValue = selectYearBra.value
-//   const objIndice = braDatas.filter(indicador => indicador.indicatorName === dataBraValue)
-//   console.log(objIndice)
-//   objIndice.map(item => console.log(item.data[yearBraValue]))
-// }
-
 
 function filterInfosMexico(e) {
   e.preventDefault();
   const dataMexValue = selectDataMex.value
   const yearMexValue = selectYearMex.value
-  const objIndice = mexDatas.filter(indicador => indicador.indicatorName === dataMexValue)
-  objIndice.map(item => console.log(item.data[yearMexValue]))
+  filterTodos(mexDatas, dataMexValue, yearMexValue);
+
+  //const objIndice = mexDatas.filter(indicador => indicador.indicatorName === dataMexValue)
+  //objIndice.map(item => console.log(item.data[yearMexValue]))
 }
 
 function filterInfosChile(e) {
   e.preventDefault();
   const dataChlValue = selectDataChl.value
   const yearChlValue = selectYearChl.value
-  const objIndice = chlDatas.filter(indicador => indicador.indicatorName === dataChlValue)
-  objIndice.map(item => console.log(item.data[yearChlValue]))
+  filterTodos(chlDatas, dataChlValue, yearChlValue);
+  //const objIndice = chlDatas.filter(indicador => indicador.indicatorName === dataChlValue)
+  //objIndice.map(item => console.log(item.data[yearChlValue]))
+}
+
+function filterTodos(data, selectValue, yearValue) {
+  const dataFiltrado = data.filter(indicador => indicador.indicatorName === selectValue);
+  dataFiltrado.map(item => console.log(item.data[yearValue]))
 }
 
 
-peruDatas.map((elem) => {
+perDatas.map((elem) => {
   selectDataPer.innerHTML += `<option>${elem.indicatorName}</option>`
 })
 for (item of Object.keys(yearPeruData)) {
@@ -89,7 +91,7 @@ for (item of Object.keys(yearPeruData)) {
 }
 
 braDatas.map((elem) => {
-  selectDataBra.innerHTML += `<option> "${elem.indicatorName}"</option>`
+  selectDataBra.innerHTML += `<option>${elem.indicatorName}</option>`
 })
 for (item of Object.keys(yearBrasilData)) {
   selectYearBra.innerHTML += `<option>${item}</option>`
@@ -111,12 +113,12 @@ for (item of Object.keys(yearChileData)) {
 
 
 
-// window.data = {
-//   filterPeru: filterInfosPeru,
+ window.data = {
+  filterTodos: filterTodos,
 //   filterPeru: filterInfosBrasil,
 //   filterPeru: filterInfosMexico,
 //   filterPeru: filterInfosChile
-// }
+}
 
 //countryYears = () => {
 

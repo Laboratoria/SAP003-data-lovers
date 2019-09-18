@@ -1,7 +1,11 @@
 //colocar as funções
-//window.data.filterInfosPeru
+//window.data.filterTodos
 
-
+//btnPer.addEventListener("change", () => {
+//    let peixinho = window.data.filterTodos;
+//    document.getElementById("result").innerHTML = `Esse é o resultado ${peixinho}`;
+//    console.log(peixinho)
+//});
 //btnPer.addEventListener("click", () => {
 //    let banana = window.data.filterInfosPeru;
 //    document.getElementById("result").innerHTML = `Esse é o resultado ${banana}`
