@@ -1,6 +1,7 @@
 //MAIN JS
 const selectDataPer = document.getElementById("select-peru")
 const selectYearPer = document.getElementById("year-peru")
+const resultPer = document.getElementById("result-per")
 
 const selectDataMex = document.getElementById("select-mexico")
 const selectYearMex = document.getElementById("year-mexico")
@@ -32,7 +33,7 @@ const btnMex = document.getElementById("btn-submit-mex")
 const btnChl = document.getElementById("btn-submit-chl")
 
 
-//btnPer.addEventListener("click", filterInfosPeru);
+btnPer.addEventListener("click", filterInfosPeru);
 btnBra.addEventListener("click", filterInfosBrasil);
 btnMex.addEventListener("click", filterInfosMexico);
 btnChl.addEventListener("click", filterInfosChile);
@@ -79,8 +80,27 @@ function filterInfosChile(e) {
 
 function filterTodos(data, selectValue, yearValue) {
   const dataFiltrado = data.filter(indicador => indicador.indicatorName === selectValue);
-  dataFiltrado.map(item => console.log(item.data[yearValue]))
+  dataFiltrado.map(item => resultPer.innerHTML += `<p>Esse é o resultado ${item.data[yearValue]}</p>`)
 }
+//function filterTodos(data, selectValue, yearValue) {
+//  const dataFiltrado = data.filter(indicador => indicador.indicatorName === selectValue);
+//  dataFiltrado.map(item => console.log(item.data[yearValue]))
+//}
+
+const selectPais = document.getElementById("select-country")
+selectPais.addEventListener("change", teste)
+
+function teste(){
+  console.log(WORLDBANK[selectPais].indicators)
+}
+
+
+
+let paises = document.getElementById("result-per")
+
+perDatas.map((elem) => {
+  selectDataPer.innerHTML += `<option>${elem.indicatorName}</option>`
+})
 
 
 perDatas.map((elem) => {
@@ -113,12 +133,12 @@ for (item of Object.keys(yearChileData)) {
 
 
 
- window.data = {
-  filterTodos: filterTodos,
+//window.data = {
+//   filterTodos: filterTodos,
 //   filterPeru: filterInfosBrasil,
 //   filterPeru: filterInfosMexico,
 //   filterPeru: filterInfosChile
-}
+//}
 
 //countryYears = () => {
 
