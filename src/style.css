@@ -7,27 +7,29 @@ body,html{
   text-align: center;
 }
 
-.box-peru{
+/*
+.peru{
   background-image: url(img/peru-flag-of-peru-peruvian-flag.jpg);
   min-height: 90%;
 }
 
-.box-brasil{
+.brasil{
   background-image: url(img/brazil-3001462.png);
   min-height: 90%;
 }
   
-.box-mexico{
+.mexico{
   background-image: url(img/mexican-flag-3001452.png);
   min-height: 90%;
 }
   
-.box-chile{
+.chile{
   background-image: url(img/chile-1460323.jpg);
   min-height: 90%;
 }
+*/
 
-.box-peru, .box-brasil, .box-mexico, .box-chile{
+.peru, .brasil, .mexico, .chile{
   position: relative;
   opacity: 0.8;
   background-position: center;
@@ -68,14 +70,6 @@ option{
   background: pink;
 }
 
-/*
-@media (max-width: 768px) {
-  .heading{
-    font-size: 250%;
-  }
-}
-*/
-
 select{
   width: 200px;
   height: 40px;
@@ -83,6 +77,6 @@ select{
   border-radius: 20px;
 }
 
-#result-per{
+#result{
   background: white;
 }
