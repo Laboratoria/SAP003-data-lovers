@@ -10,10 +10,8 @@ const result = document.getElementById("result");
 button.addEventListener("click", (e) => {
   e.preventDefault();
   const countryValue1 = selectPais.value;
-  //const dataValue1 = getData.value
   const indicators1 = WORLDBANK[countryValue1].indicators;
-
-  const dataFiltrado = data.filterDatas(indicators1, getData.value);
+  const dataFiltrado = filterDatas(indicators1, getData.value);
 
   dataFiltrado.map(item => {    
     if (item.data[getYears.value] === "") {
@@ -25,18 +23,17 @@ button.addEventListener("click", (e) => {
   // filterDatas(indicators1, getData.value, getYears.value);
 });
 
-
-function ordenaPorFavor(array) {
-  return array.sort(function (a, b) {
-    if (a.indicatorName > b.indicatorName) {
-      return 1;
-    }
-    if (a.indicatorName < b.indicatorName) {
-      return -1;
-    }
-    return 0;
-  });
-}
+//function ordenaPorFavor(array) {
+//  return array.sort(function batata (a, b) {
+//    if (a.indicatorName > b.indicatorName) {
+//      return 1;
+//    }
+//    if (a.indicatorName < b.indicatorName) {
+//      return -1;
+//    }
+//    return 0;
+//  });
+//}
 
 function countryDatas(e) {
   e.preventDefault();
@@ -46,15 +43,15 @@ function countryDatas(e) {
   const countryValue = selectPais.value;
   const indicators = WORLDBANK[countryValue].indicators;
 
-//  indicators.sort(function (a, b) {
-//    if (a.indicatorName > b.indicatorName) {
-//      return 1;
-//    }
-//    if (a.indicatorName < b.indicatorName) {
-//      return -1;
-//    }
-//    return 0;
-//  });
+    indicators.sort(function (a, b) {
+      if (a.indicatorName > b.indicatorName) {
+        return 1;
+      }
+      if (a.indicatorName < b.indicatorName) {
+        return -1;
+      }
+      return 0;
+    });
 
   indicators.map((elem) => {
     getData.innerHTML += `<option>${elem.indicatorName}</option>`;
@@ -65,4 +62,3 @@ function countryDatas(e) {
     getYears.innerHTML += `<option>${item}</option>`; 
   }
 }
-

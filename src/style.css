@@ -7,12 +7,12 @@ body,html{
   text-align: center;
 }
 
-/*
+
 .peru{
   background-image: url(img/peru-flag-of-peru-peruvian-flag.jpg);
   min-height: 90%;
 }
-
+/*
 .brasil{
   background-image: url(img/brazil-3001462.png);
   min-height: 90%;
@@ -26,8 +26,8 @@ body,html{
 .chile{
   background-image: url(img/chile-1460323.jpg);
   min-height: 90%;
-}
-*/
+}*/
+
 
 .peru, .brasil, .mexico, .chile{
   position: relative;
@@ -36,8 +36,6 @@ body,html{
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  
 }
 
 .heading {
