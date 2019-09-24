@@ -17,7 +17,6 @@ function pais (paisEscolhido) {
     for (let j of arrayIndicators) {
       if (j === i.indicatorCode) {
         arrNovo.push({code: j, anos: i.data, name: i.indicatorName});
-
       }
     }
   });
