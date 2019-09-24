@@ -1,5 +1,8 @@
 const selectPais = document.getElementById("select-country");
-selectPais.addEventListener("change", countryDatas);
+selectPais.addEventListener("change", () => {
+  sortData(WORLDBANK[selectPais.value].indicators);
+  countryDatas();
+});
 
 const getData = document.getElementById("select-dados");
 const getYears = document.getElementById("select-ano");
@@ -11,7 +14,7 @@ button.addEventListener("click", (e) => {
   e.preventDefault();
   const countryValue1 = selectPais.value;
   const indicators1 = WORLDBANK[countryValue1].indicators;
-  const dataFiltrado = filterDatas(indicators1, getData.value);
+  const dataFiltrado = filterDatas(indicators1, getData.value);// filterDatas(indicators1, getData.value, getYears.value);
 
   dataFiltrado.map(item => {    
     if (item.data[getYears.value] === "") {
@@ -20,38 +23,28 @@ button.addEventListener("click", (e) => {
       result.innerHTML = `Esse é o resultado ${parseInt(item.data[getYears.value])}%`;
     }
   });
-  // filterDatas(indicators1, getData.value, getYears.value);
+  
+  const years = WORLDBANK[countryValue1].indicators[0].data; 
+  console.log(Object.values(years)) 
+  Object.values(years).reduce((acc, cur) => {
+    //console.log(acc + years[cur])
+    if (cur !== ""){
+      //console.log("oi");
+    return (acc + cur) / acc.length
+  }
+  console.log(acc)
+
+  return acc
+  }, 0)
+
 });
 
-//function ordenaPorFavor(array) {
-//  return array.sort(function batata (a, b) {
-//    if (a.indicatorName > b.indicatorName) {
-//      return 1;
-//    }
-//    if (a.indicatorName < b.indicatorName) {
-//      return -1;
-//    }
-//    return 0;
-//  });
-//}
-
-function countryDatas(e) {
-  e.preventDefault();
+function countryDatas() {
   getData.innerHTML = "";
   getYears.innerHTML = "";
   
   const countryValue = selectPais.value;
   const indicators = WORLDBANK[countryValue].indicators;
-
-    indicators.sort(function (a, b) {
-      if (a.indicatorName > b.indicatorName) {
-        return 1;
-      }
-      if (a.indicatorName < b.indicatorName) {
-        return -1;
-      }
-      return 0;
-    });
 
   indicators.map((elem) => {
     getData.innerHTML += `<option>${elem.indicatorName}</option>`;
