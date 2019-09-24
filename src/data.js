@@ -1,6 +1,6 @@
-window.data = {
-  pais: pais,
-}
+data = {
+  pais,
+};
 
 const arrayIndicators = [
   "SL.TLF.TOTL.FE.ZS",
@@ -9,17 +9,20 @@ const arrayIndicators = [
   "SE.PRM.ENRL.FE.ZS",
   "SE.SEC.ENRL.FE.ZS",
   "SE.TER.CUAT.ST.FE.ZS"
-]
+];
 
-function pais (paisEscolhido) {
+function pais(paisEscolhido) {
+  console.log(paisEscolhido);
   let arrNovo = [];
-    paisEscolhido.map(i => {
-      for (let j of arrayIndicators){
-        if (j === i.indicatorCode){
-         arrNovo.push({code: j, anos: i.data, name:i.indicatorName})
+  paisEscolhido.map(i => {
+    for (let j of arrayIndicators) {
+      if (j === i.indicatorCode) {
+        arrNovo.push({ code: j, anos: i.data, name: i.indicatorName });
 
-        }
       }
-    })
-    return arrNovo;
+    }
+  });
+  return arrNovo;
 }
+
+console.log(typeof pais([1, 2, 3]));
