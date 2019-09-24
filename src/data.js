@@ -16,8 +16,7 @@ function pais (paisEscolhido) {
   paisEscolhido.map(i => {
     for (let j of arrayIndicators) {
       if (j === i.indicatorCode) {
-        arrNovo.push ({code: j, anos: i.data, name: i.indicatorName});
-
+        arrNovo.push({code: j, anos: i.data, name: i.indicatorName});
       }
     }
   });

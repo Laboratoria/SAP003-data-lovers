@@ -1,11 +1,16 @@
 require("../src/data.js");
 
-describe("pais", () => {
-  it("is a function", () => {
-    expect(typeof window.data.pais).toBe("function");
-  });
+const arrayIndicators = [
+  "SL.TLF.TOTL.FE.ZS",
+  "SL.UEM.TOTL.FE.ZS",
+  "SL.EMP.TOTL.SP.FE.ZS",
+  "SE.PRM.ENRL.FE.ZS",
+  "SE.SEC.ENRL.FE.ZS",
+  "SE.TER.CUAT.ST.FE.ZS"
+];
 
-  it("returns `pais`", () => {
-    expect(example()).toBe("example");
+describe("teste da função filtro", () => {
+  it("é uma função", () => {
+    expect(typeof window.data.pais([{ chave: 1}])).toBe("object");
   });
 });
