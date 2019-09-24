@@ -11,18 +11,14 @@ const arrayIndicators = [
   "SE.TER.CUAT.ST.FE.ZS"
 ];
 
-function pais(paisEscolhido) {
-  console.log(paisEscolhido);
+function pais (paisEscolhido) {
   let arrNovo = [];
   paisEscolhido.map(i => {
     for (let j of arrayIndicators) {
       if (j === i.indicatorCode) {
         arrNovo.push({ code: j, anos: i.data, name: i.indicatorName });
-
       }
     }
   });
   return arrNovo;
 }
-
-console.log(typeof pais([1, 2, 3]));
