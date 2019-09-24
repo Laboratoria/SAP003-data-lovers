@@ -1,16 +1,16 @@
-let pais = document.getElementById("paises").value;
-paises.addEventListener ("change", function escolhaPais () {
-if (pais == "brasil"){
-    console.log(WORLDBANK.BRA.indicators)
-}
-else if (pais == "peru"){
-    console.log(WORLDBANK.PER.indicators)
-}
-else if (pais == "chile"){
-    console.log(WORLDBANK.CHL.indicators)
-}
-else {
-    console.log(WORLDBANK.MEX.indicators)
-}
-} 
-);
+const print = document.getElementById("root")
+paises.addEventListener("change", function escolhaPais() {
+  print.innerHTML = "";
+  const pais = document.getElementById("paises").value;
+  const paisEscolhido = WORLDBANK[pais].indicators;
+  const paisFiltrado = window.data.pais(paisEscolhido)
+  console.log(paisFiltrado)
+  paisFiltrado.map(item => {
+    print.innerHTML += `<p>${item.name}</p><div id="${item.name}"></div>`
+    for (let ano in item.anos) {
+      if (item.anos[ano] !== "") {
+        document.getElementById(item.name).innerHTML += `<p>${ano} : ${item.anos[ano]}</p>`
+      }
+    }
+  })
+})
