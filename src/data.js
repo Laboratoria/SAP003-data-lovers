@@ -23,5 +23,3 @@ function pais (paisEscolhido) {
     })
     return arrNovo;
 }
-
-
