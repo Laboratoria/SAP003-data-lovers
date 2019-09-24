@@ -3,57 +3,41 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Data Lovers</title>
+  <title>FEMINIJOBS</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div id="pais">
-    <form action="/action_page.php">
-      <select name="paises">
-        <option value="brasil">Brasil</option>
-        <option value="peru">Peru</option>
-        <option value="chile">Chile</option>
-        <option value="mexico">México</option>
-      </select>
-      <br><br>
-    </form>
+  <header>Relação de empregabilidade feminina</header>
+  <main>
+    <div class="form">
+      <div class="pais">
+        <form action="/action_page.php">
+          <select name="paises" id="paises">
+            <option value="selecione"></option>
+            <option value="BRA">Brasil</option>
+            <option value="PER">Peru</option>
+            <option value="CHL">Chile</option>
+            <option value="MEX">México</option>
+          </select>
+          <br><br>
+        </form>
+      </div>
+      <div class="indice">
+        <form action="/action_page.php">
+          <select name="indicadores" id="indicadores">
+            <option value="selecionar"></option>
+          </select>
+          <br><br>
+        </form>
+      </div>
+    </div>
+  </main>
+  <div id="root">
+
   </div>
-  <div id="indice">
-    <form action="/action_page.php">
-      <select name="indicadores">
-        <option value="edu">Educação</option>
-        <option value="emp">Empregabilidade</option>
-        <option value="des">Desempregabilidade</option>
-        <option value="pop">População</option>
-      </select>
-      <br><br>
-    </form>
-  </div>
-  <div id="ano">
-    <form action="/action_page.php">
-      <select name="ano">
-        <option value="2010">2010</option>
-        <option value="2011">2011</option>
-        <option value="2012">2012</option>
-        <option value="2013">2013</option>
-        <option value="2014">2014</option>
-        <option value="2015">2015</option>
-        <option value="2016">2016</option>
-        <option value="2017">2017</option>
-      </select>
-      <input type="submit">
-    </form>
-  </div>
-  <!-- <script src="data/injuries/injuries.js"></script> -->
-  <!-- <script src="data/lol/lol.js"></script> -->
-  <!-- <script src="data/patient/patient.js"></script> -->
-  <!-- <script src="data/pokemon/pokemon.js"></script> -->
-  <!-- <script src="data/rickandmorty/rickandmorty.js"></script> -->
-  <!-- <script src="data/steam/steam.js"></script> -->
   <script src="data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
-
 </html>
