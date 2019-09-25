@@ -4,6 +4,29 @@ describe("filterDatas", () => {
   it("is a function", () => {
     expect(typeof filterDatas).toBe("function");
   }); 
+  it("funcao filtro", () => {
+    expect(filterDatas(
+      [
+        {
+          indicatorName: "gatinho"
+        },
+        {
+          indicatorName: "xuxu"
+        },
+        {
+          indicatorName: "banana"
+        }
+      ]
+
+      , "gatinho")).toEqual(
+      [
+        {
+          indicatorName: "gatinho"
+        }
+      ]
+    );
+  }); 
+
 });
 
 describe("sortData", () => {
@@ -12,39 +35,33 @@ describe("sortData", () => {
   });
 
   it("returns `sortData`", () => {
-    expect(sortData(
-      [
-        {
-          "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
-        },
-        {
-          "indicatorName": "Fuerza laboral con educación intermedia, mujeres (% de la fuerza laboral femenina)",
-        },
-        {
-          "indicatorName": "Tasa de participación en la fuerza laboral, total (% de la población total mayor de 15 años) (estimación nacional)",
-        },
-        {
-          "indicatorName": "Proporcin de tasas de participacin laboral femenina y masculina (%) (estimación modelado OIT)",
-        }
-      ]
-    )).toEqual(
-      [
-        {
-          "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
-        },
-        {
-          "indicatorName": "Fuerza laboral con educación intermedia, mujeres (% de la fuerza laboral femenina)",
-        },
-        {
-          "indicatorName": "Proporcin de tasas de participacin laboral femenina y masculina (%) (estimación modelado OIT)",
-        },
-        {
-          "indicatorName": "Tasa de participación en la fuerza laboral, total (% de la población total mayor de 15 años) (estimación nacional)",
-        }
-      ]
-    );
+    expect(sortData([{"indicatorName": "Xuxa"}, {"indicatorName": "Banana"}, {"indicatorName": "Peixinho"}, {"indicatorName": "Palomita"}])).toEqual([{"indicatorName": "Banana"}, {"indicatorName": "Palomita"}, {"indicatorName": "Peixinho"}, {"indicatorName": "Xuxa"}]);
   });
 });
+
+/*
+{
+  "indicators": [
+    {
+      indicatorName: "gatinho"
+    },
+    {
+      indicatorName: "xuxu"
+    },
+    {
+      indicatorName: "banana"
+    }
+  ]
+}
+
+{
+  "indicators": [
+    {
+      indicatorName: "gatinho"
+    }
+  ]
+}
+*/
 
 /*
 it("returns `ordenaPorFavor`", () => {
