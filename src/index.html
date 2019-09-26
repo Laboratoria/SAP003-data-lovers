@@ -9,43 +9,45 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <img src="images/logodatalovers" class="logo"/>
-    </nav>
-  <header>
-  </header>
-  <h1>Dados sobre mulheres no mercado de trabalho:</h1>
-  <main>
-    <div class="form">
-      <div class="pais">
-        <form action="/action_page.php">
-          <select name="paises" id="paises">
-            <option value="selecione">Escolha o país</option>
-            <option value="BRA">Brasil</option>
-            <option value="PER">Peru</option>
-            <option value="CHL">Chile</option>
-            <option value="MEX">México</option>
-          </select>
-          <button id="crescente">Anos em ordem crescente</button>
-          <button id="decrescente">Anos em ordem decrescente</button>
-          <br><br>
-        </form>
-      </div>
-      <div class="indice">
-        <form action="/action_page.php">
-          <select name="indicadores" id="indicadores">
-            <option value="selecionar"></option>
-          </select>
-          <br><br>
-        </form>
-      </div>
+  <div class="container">
+      <header>
+          <nav class="navbar">
+              <img src="images/logodatalovers" class="logo" />
+            </nav>
+      </header>
+      <h1 class="h1">Dados sobre mulheres no mercado de trabalho:</h1>
+      <main>
+        <div class="form">
+          <div class="pais">
+            <form action="/action_page.php">
+              <select name="paises" id="paises">
+                <option value="selecione">Escolha o país</option>
+                <option value="BRA">Brasil</option>
+                <option value="PER">Peru</option>
+                <option value="CHL">Chile</option>
+                <option value="MEX">México</option>
+              </select>
+              <button id="crescente">Anos em ordem crescente</button>
+              <button id="decrescente">Anos em ordem decrescente</button>
+              <br><br>
+            </form>
+          </div>
+          <div class="indice">
+            <form action="/action_page.php">
+              <select name="indicadores" id="indicadores">
+                <option value="selecionar"></option>
+              </select>
+              <br><br>
+            </form>
+          </div>
+        </div>
+        <div id="root">
+        </div>
+      </main>
     </div>
-    <div id="root">
-    </div>
-  </main>
-  <script src="data/worldbank/worldbank.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+    <script src="data/worldbank/worldbank.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
