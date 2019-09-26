@@ -1,10 +1,23 @@
-header {
-
+html, body {
+    background: white;
+    font-family: 'Rubik', sans-serif;
 }
 
-.pais {
-    background-color:#ffffff;
-    font-size: 13px;
-    color:#000000;
-    border-radius: 2px
+container. {
+    display: grid;
+    grid-template: 
+    grid-template-areas: "h h"
+                         "m m"
+                         "f f"   
+}
+
+header {
+    background: white;
+    grid-area: h;
+}
+
+.logo {
+    width: 209px;
+    height: 208px;
+    position: relative;
 }

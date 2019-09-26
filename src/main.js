@@ -8,8 +8,18 @@ paises.addEventListener("change", function escolhaPais() {
     print.innerHTML += `<p>${item.name}</p><div id="${item.name}"></div>`;
     for (let ano in item.anos) {
       if (item.anos[ano] !== "") {
+        console.log(typeof(item.anos[ano]))
         document.getElementById(item.name).innerHTML += `<p>${ano} : ${item.anos[ano].toString().slice(0,5)} %</p>`;
       }
     }
   });
 });
+
+crescente.addEventListener("click", function ordemCrescente () {
+  print.innerHTML = "";
+  const paisFiltrado = window.data.pais(paisEscolhido);
+  arrCrescente = [];
+  paisFiltrado.map(i => {
+    
+  })
+  })
