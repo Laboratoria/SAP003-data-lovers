@@ -17,7 +17,6 @@ describe("filterDatas", () => {
           indicatorName: "banana"
         }
       ]
-
       , "gatinho")).toEqual(
       [
         {
@@ -25,8 +24,7 @@ describe("filterDatas", () => {
         }
       ]
     );
-  }); 
-
+  });
 });
 
 describe("sortData", () => {
@@ -39,29 +37,25 @@ describe("sortData", () => {
   });
 });
 
-/*
-{
-  "indicators": [
-    {
-      indicatorName: "gatinho"
-    },
-    {
-      indicatorName: "xuxu"
-    },
-    {
-      indicatorName: "banana"
-    }
-  ]
-}
+describe("dataAverage", () => {
+  it("is a function", () => {
+    expect(typeof dataAverage).toBe("function");
+  });
 
-{
-  "indicators": [
-    {
-      indicatorName: "gatinho"
-    }
-  ]
-}
-*/
+  it("Média", () => {
+    expect(dataAverage({"2002": 31.4799995422363, "2003": 29.6299991607666, "2004": 27.6299991607666})).toEqual(29.57999928792317);
+  });
+
+/*
+  it("60 por 10", () => {
+    expect(divide(60, 10)).toBe(6);
+  });
+
+  it("60 por 0", () => {
+    expect(divide(60, 0)).toBe(Infinity);
+  });
+  */
+});
 
 /*
 it("returns `ordenaPorFavor`", () => {
