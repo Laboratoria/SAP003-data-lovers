@@ -8,22 +8,26 @@ html {
 }
 
 body {
+
     background-color: #c8e6c9;
-    font-family: 'Rubik', sans-serif;
-    margin:0px;
+    margin-top: 208px;
     padding: 0px;
+    font-family: 'Rubik', sans-serif;
 }
 
 .navbar {
     background-color: #88c399;
     height: 11em;
-   /* position: fixed;*/
-    
+<
+    position: fixed; 
+    top: 0; 
+    left: 0px; 
+    right: 0px;
 }
 
 
 .logo {
-    height:176px;
+    height: 176px;
     text-align: center;
     width:177px;
 }
@@ -41,7 +45,8 @@ form{
     margin-top: 4%;
 }
 .form{
-    height: 100px;
+    height: 63px;
+    margin-top: 4%;
 }
 
 .indice {
