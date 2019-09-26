@@ -8,22 +8,24 @@ html {
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
-    background-color: white;
+    background-color: #c8e6c9;
     font-family: 'Rubik', sans-serif;
+    margin:0px;
+    padding: 0px;
 }
 
 .navbar {
-    background-color: #BDF2F2;
-    height: 17%;
+    background-color: #88c399;
+    height: 11em;
+   /* position: fixed;*/
+    
 }
 
 
 .logo {
-    width: 179px;
-    height: 178px;
+    height:176px;
     text-align: center;
+    width:177px;
 }
 
 .h1 {
@@ -35,14 +37,38 @@ body {
 .pais{
     height: 25px;
 }
-
+form{
+    margin-top: 4%;
+}
 .form{
     height: 100px;
 }
 
 .indice {
-    margin: 15px;
-    width: 50px;
     height: 100px;
+    margin: 15px;
     text-align: center;
+    width: 50px;
+}
+#btn{
+    background:#D9998B;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1,2rem;
+    font-weight: bold;
+    padding: 15px;
+    margin: 5px;
+}
+#paises{
+    background:#D9998B;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1,2rem;
+    font-weight: bold;
+    padding: 15px;
+    margin: 5px;
 }
