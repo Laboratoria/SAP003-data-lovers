@@ -1,17 +1,29 @@
 const selectPais = document.getElementById("select-country");
+
 selectPais.addEventListener("change", () => {
   sortData(WORLDBANK[selectPais.value].indicators);
   countryDatas();
 });
 
-const getData = document.getElementById("select-dados");
 const getYears = document.getElementById("select-ano");
+const getData = document.getElementById("select-dados");
+
 getData.addEventListener("change", () => {
   const indicators = WORLDBANK[selectPais.value].indicators;
-
-  const data = indicators.filter(elem => elem.indicatorName === getData.value ? elem.data : null);
-  popularAno(data[0].data);
+  const dataFilter = indicators.filter(elem => elem.indicatorName === getData.value ? elem.data : null);
+  popularAno(dataFilter[0].data);
+  //console.log(dataFilter[0].data)
 });
+
+//const getYears = document.getElementById("select-ano");
+
+//getYears.addEventListener("change", () =>{
+//  const countryValue = selectPais.value;
+//  const years = WORLDBANK[countryValue].indicators[0].data;
+//  const carlos = years.filter(elem => elem.data === getYears ? elem : null)
+//  popularAno(carlos[0].data);
+//  console.log(carlos[0].data)
+//})
 
 const button = document.getElementById("btn-ver");
 const result = document.getElementById("result");
