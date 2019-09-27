@@ -3,13 +3,15 @@ function filterDatas(data, indicatorValue) {
 }
 
 function dataAverage(ano) {
+  console.log(ano)
   const filterYear = Object.entries(ano).filter(ano => ano[1] !== "");
   const mapYear = filterYear.map(year => year[1]);
+  // console.log(mapYear)
   const soma = mapYear.reduce((acc, cur) => {
     return acc + cur;
   }, 0);
   return soma / mapYear.length;
-  //console.log(soma / mapYear.length)
+  // console.log(soma / mapYear.length)
   //console.log(mapYear.length)
   
 }
@@ -18,7 +20,7 @@ function dataAverage(ano) {
 
 function sortData(array) {
   return array.sort(function (a, b) {
-    return a.indicatorName.localeCompare(b.indicatorName); //mudar de lugar
+    return a.indicatorName.localeCompare(b.indicatorName);
   });
 }
 
