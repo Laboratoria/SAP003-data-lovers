@@ -1,7 +1,3 @@
-data = {
-  pais,
-};
-
 const arrayIndicators = [
   "SL.TLF.TOTL.FE.ZS",
   "SL.UEM.TOTL.FE.ZS",
@@ -12,30 +8,47 @@ const arrayIndicators = [
 ];
 
 function pais(paisEscolhido) {
-  const desempregadas = "SL.UEM.TOTL.FE.ZS";
-  const populacao = "SP.POP.TOTL.FE.IN";
   let arrNovo = [];
   paisEscolhido.map(i => {
     for (let indicador of arrayIndicators) {
       if (indicador === i.indicatorCode) {
         arrNovo.push({ code: indicador, anos: i.data, name: i.indicatorName });
       }
-      if (i.indicatorCode === desempregadas && i.indicatorCode === populacao){
-          i.data
-        calculo();
-      }
     }
   });
   return arrNovo;
 }
 
-/*Função cálculo*/
+// função cálculo
 
-function calculo(desempregadas, populacao) {
-    (((desempregadas)/populacao)*100);
-  return calculo;
-}
-console.log("desmp " + desempregadas);
-console.log(populacao);
+function calculo(arrayPais, indicatorDesemprego, indicatorPopulacao) {
+  let somaDes = 0;
+  arrayPais.map(i => {
+    if (i.indicatorCode === indicatorDesemprego) {
+      const arrayValores = Object.values(i.data);
+      for (let i of arrayValores) {
+        if (i != "") {
+          somaDes += i;
+        }
+      }
+    }
+  });
+  let somaPop = 0;
+  arrayPais.map(i => {
+    if (i.indicatorCode === indicatorPopulacao) {
+      const arrayValores = Object.values(i.data);
+      for (let i of arrayValores) {
+        if (i != "") {
+          somaPop += i;
+        }
+      }
+    }
+  });
+  return (somaDes/somaPop) * 100;
+};
 
+data = {
+  calculo,
+  pais
+};
 
