@@ -59,4 +59,4 @@ Caracteristicas: Antenada nas redes sociais, gosta de ler, tem muitos amigos e g
 Necessidades: Base de dados para pesquisas escolares que possibilitem retorno rápido da informação. 
 
 #### Protótipo de baixa fidelidade
-![Print tela](src/img/prototipo.jpeg)
+![Print tela](prototipo.jpeg)
