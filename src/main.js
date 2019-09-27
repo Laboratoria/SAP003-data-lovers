@@ -20,6 +20,7 @@ crescente.addEventListener("click", function ordemCrescente () {
   const paisFiltrado = window.data.pais(paisEscolhido);
   arrCrescente = [];
   paisFiltrado.map(i => {
-    
+
   })
   })
+

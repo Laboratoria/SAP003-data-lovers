@@ -11,14 +11,31 @@ const arrayIndicators = [
   "SE.TER.CUAT.ST.FE.ZS"
 ];
 
-function pais (paisEscolhido) {
+function pais(paisEscolhido) {
+  const desempregadas = "SL.UEM.TOTL.FE.ZS";
+  const populacao = "SP.POP.TOTL.FE.IN";
   let arrNovo = [];
   paisEscolhido.map(i => {
-    for (let j of arrayIndicators) {
-      if (j === i.indicatorCode) {
-        arrNovo.push({ code: j, anos: i.data, name: i.indicatorName });
+    for (let indicador of arrayIndicators) {
+      if (indicador === i.indicatorCode) {
+        arrNovo.push({ code: indicador, anos: i.data, name: i.indicatorName });
+      }
+      if (i.indicatorCode === desempregadas && i.indicatorCode === populacao){
+          i.data
+        calculo();
       }
     }
   });
   return arrNovo;
 }
+
+/*Função cálculo*/
+
+function calculo(desempregadas, populacao) {
+    (((desempregadas)/populacao)*100);
+  return calculo;
+}
+console.log("desmp " + desempregadas);
+console.log(populacao);
+
+
