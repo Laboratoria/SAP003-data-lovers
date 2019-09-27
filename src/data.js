@@ -6,14 +6,10 @@ function dataAverage(ano) {
   console.log(ano)
   const filterYear = Object.entries(ano).filter(ano => ano[1] !== "");
   const mapYear = filterYear.map(year => year[1]);
-  // console.log(mapYear)
   const soma = mapYear.reduce((acc, cur) => {
     return acc + cur;
   }, 0);
   return soma / mapYear.length;
-  // console.log(soma / mapYear.length)
-  //console.log(mapYear.length)
-  
 }
 
 //console.log(dataAverage({"2002": 31.4799995422363, "2003": 29.6299991607666, "2004": 27.6299991607666}));
