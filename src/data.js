@@ -3,7 +3,7 @@ function filterDatas(data, indicatorValue) {
 }
 
 function dataAverage(ano) {
-  console.log(ano)
+  console.log(ano);
   const filterYear = Object.entries(ano).filter(ano => ano[1] !== "");
   const mapYear = filterYear.map(year => year[1]);
   const soma = mapYear.reduce((acc, cur) => {

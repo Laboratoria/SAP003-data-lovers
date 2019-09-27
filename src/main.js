@@ -14,7 +14,6 @@ getData.addEventListener("change", () => {
   inputYear(dataFilter[0].data);
 });
 
-
 const button = document.getElementById("btn-ver");
 const result = document.getElementById("result");
 const reduce = document.getElementById("reduce");
@@ -34,8 +33,38 @@ button.addEventListener("click", (e) => {
     }
   });
   const years = indicatorFilter[0].data;
-  console.log(years)
+  const dadoDoAno = dataFiltrado[0].data[getYears.value];
   reduce.innerHTML = `Média por anos disponíveis ${parseInt(dataAverage(years))}%`;
+
+  const ctx = document.getElementById("myChart").getContext("2d");
+  new Chart(ctx, {
+    type: "polarArea",
+    data: {
+      labels: ["ano", "média"],
+      datasets: [{
+        label: "# of Votes",
+        data: [parseInt(dadoDoAno), parseInt(dataAverage(years))],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)"
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)"
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
 });
 
 function countryDatas() {
@@ -53,7 +82,7 @@ function countryDatas() {
 function inputYear(years) {
   getYears.innerHTML = "";
   const xuxu = Object.entries(years).filter(ano => ano[1] !== "");     
-   xuxu.map((elem) => {
+  xuxu.map((elem) => {
     getYears.innerHTML += `<option>${elem[0]}</option>`;
-  })
+  });
 }
