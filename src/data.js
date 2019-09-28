@@ -1,3 +1,9 @@
+
+data = {
+  pais,
+  calculo
+};
+
 const arrayIndicators = [
   "SL.TLF.TOTL.FE.ZS",
   "SL.UEM.TOTL.FE.ZS",
@@ -19,7 +25,6 @@ function pais(paisEscolhido) {
   return arrNovo;
 }
 
-// função cálculo
 
 function calculo(arrayPais, indicatorDesemprego, indicatorPopulacao) {
   let somaDes = 0;
@@ -46,9 +51,3 @@ function calculo(arrayPais, indicatorDesemprego, indicatorPopulacao) {
   });
   return (somaDes/somaPop) * 100;
 };
-
-data = {
-  calculo,
-  pais
-};
-
