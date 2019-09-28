@@ -1,5 +1,7 @@
+
 data = {
-  pais
+  pais,
+  calculo
 };
 
 const arrayIndicators = [
@@ -11,14 +13,41 @@ const arrayIndicators = [
   "SE.TER.CUAT.ST.FE.ZS"
 ];
 
-function pais (paisEscolhido) {
+function pais(paisEscolhido) {
   let arrNovo = [];
   paisEscolhido.map(i => {
-    for (let j of arrayIndicators) {
-      if (j === i.indicatorCode) {
-        arrNovo.push({ code: j, anos: i.data, name: i.indicatorName });
+    for (let indicador of arrayIndicators) {
+      if (indicador === i.indicatorCode) {
+        arrNovo.push({ code: indicador, anos: i.data, name: i.indicatorName });
       }
     }
   });
   return arrNovo;
 }
+
+
+function calculo(arrayPais, indicatorDesemprego, indicatorPopulacao) {
+  let somaDes = 0;
+  arrayPais.map(i => {
+    if (i.indicatorCode === indicatorDesemprego) {
+      const arrayValores = Object.values(i.data);
+      for (let i of arrayValores) {
+        if (i != "") {
+          somaDes += i;
+        }
+      }
+    }
+  });
+  let somaPop = 0;
+  arrayPais.map(i => {
+    if (i.indicatorCode === indicatorPopulacao) {
+      const arrayValores = Object.values(i.data);
+      for (let i of arrayValores) {
+        if (i != "") {
+          somaPop += i;
+        }
+      }
+    }
+  });
+  return (somaDes/somaPop) * 100;
+};

@@ -11,14 +11,20 @@
 <body>
   <nav class="navbar">
     <img src="images/logodatalovers" class="logo" />
+    <div id="links">
+      <ul>
+        <li id="media"><a href="#">Média de <br>Desemprego<br></a></li>
+        <li><a href="#">Saiba mais</a></li>
+      </ul>
+    </div>
   </nav>
   <header>
     <h1 class="h1">Dados sobre mulheres no mercado de trabalho:</h1>
   </header>
   <main>
-    <div class="form">
+
       <div class="pais">
-        <form action="/action_page.php">
+        <form>
           <select name="paises" id="paises">
             <option value="selecione">Escolha o país</option>
             <option value="BRA">Brasil</option>
@@ -30,12 +36,15 @@
           <button type="button" id="decrescente">Anos em ordem decrescente</button>
         </form>
       </div>
-    </div>
-    <div id="root">
-    </div>
+    <div id="root"></div>
+    <div id="qualquer"></div>
   </main>
+  <!--<aside>
+    <h1>Qual a média de mulheres desempregadas na América do Sul?</h1>
+  </aside>-->
   <script src="data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
+
 </html>

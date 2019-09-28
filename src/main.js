@@ -4,6 +4,7 @@ const decrescente = document.getElementById("decrescente").addEventListener("cli
 const crescente = document.getElementById("crescente").addEventListener("click", ordemCrescente);
 
 function escolhaPais() {
+  event.preventDefault();
   print.innerHTML = "";
   const pais = document.getElementById("paises").value;
   const paisEscolhido = WORLDBANK[pais].indicators;
@@ -25,3 +26,8 @@ function ordemDecrescente(){
  function ordemCrescente(){
   document.querySelectorAll('section').forEach(e => e.setAttribute('style','flex-direction: column'))
  }
+
+document.getElementById("media").addEventListener("click", calculo);
+function calculo() {
+  document.getElementById("qualquer").innerHTML = data.calculo(WORLDBANK.BRA.indicators, "SL.UEM.TOTL.FE.ZS", "SP.POP.TOTL.FE.IN");
+}

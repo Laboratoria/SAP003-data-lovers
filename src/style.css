@@ -14,6 +14,10 @@ body {
     padding: 0px;
     font-family: 'Rubik', sans-serif;
 }
+u, li,a{
+    color: #F23D5E;
+    font-size: 1.2rem;
+    text-decoration: none;
 
 section {
     padding: 10px;
@@ -35,10 +39,27 @@ p {
     position: fixed; 
     top: 0; 
     left: 0px; 
+
+}
+.navbar ul {
+  display: flex;
+}
+.navbar .links ul li {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  margin-left: 20px;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+.navbar {
+    background-color: #88c399;
+    height: 11em;
+    position: fixed;
+    top: 0;
+    left: 0px;
     right: 0px;
 }
-
-
 .logo {
     height: 176px;
     text-align: center;
@@ -49,10 +70,6 @@ p {
     margin-top: 4%;
     margin-bottom: 0%;
     text-align: center;
-}
-
-.pais{
-    height: 25px;
 }
 form{
     margin-top: 4%;
@@ -80,6 +97,7 @@ form{
     padding: 15px;
     margin: 5px;
 }
+  
 #paises{
     background:#D9998B;
     border-radius: 10px;
