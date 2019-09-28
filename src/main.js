@@ -19,13 +19,13 @@ function escolhaPais() {
   });
 }
 
-function ordemDecrescente(){
-  document.querySelectorAll('section').forEach(e => e.setAttribute('style','flex-direction: column-reverse'))
- }
+function ordemDecrescente() {
+  document.querySelectorAll('section').forEach(e => e.setAttribute('style', 'flex-direction: column-reverse'))
+}
 
- function ordemCrescente(){
-  document.querySelectorAll('section').forEach(e => e.setAttribute('style','flex-direction: column'))
- }
+function ordemCrescente() {
+  document.querySelectorAll('section').forEach(e => e.setAttribute('style', 'flex-direction: column'))
+}
 
 document.getElementById("media").addEventListener("click", calculo);
 function calculo() {

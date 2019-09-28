@@ -49,5 +49,5 @@ function calculo(arrayPais, indicatorDesemprego, indicatorPopulacao) {
       }
     }
   });
-  return (somaDes/somaPop);
+  return (somaDes / somaPop);
 };
