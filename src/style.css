@@ -15,10 +15,23 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
+section {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    padding: 10px;
+    margin-left: 90px;
+    margin-right: 90px; 
+    font-size: 26px;
+}
+
+
 .navbar {
     background-color: #88c399;
     height: 11em;
-<
     position: fixed; 
     top: 0; 
     left: 0px; 
@@ -55,7 +68,8 @@ form{
     text-align: center;
     width: 50px;
 }
-#btn{
+
+#decrescente{
     background:#D9998B;
     border-radius: 10px;
     border: none;
@@ -67,6 +81,18 @@ form{
     margin: 5px;
 }
 #paises{
+    background:#D9998B;
+    border-radius: 10px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1,2rem;
+    font-weight: bold;
+    padding: 15px;
+    margin: 5px;
+}
+
+#crescente {
     background:#D9998B;
     border-radius: 10px;
     border: none;
