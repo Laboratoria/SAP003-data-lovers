@@ -14,9 +14,10 @@ body {
     padding: 0px;
 }
 
-.navbar {
+nav{
     background-color: #88c399;
     height: 11em;
+<<<<<<< HEAD
     left: 0px;
     position: fixed;
     right: 0px;;
@@ -26,13 +27,49 @@ body {
 a {
     color:#D9998B;
     font-size: 1.2rem;
+=======
+    position: fixed; 
+    top: 0; 
+    left: 0px; 
+    right: 0px;
+}
+.navbar{
+    display: flex;
+    
+}
+ul, li,a {
+    color: #F23D5E;
+    font-size: 1.5rem;
+>>>>>>> d5248ee98db017029f1b88a3f344d5e6eae8c97d
     text-decoration: none;
+    display:flex;
+    align-items: center;
+    font-weight: bold;
+}
+.links{
+    display: flex;
+ 
 }
 
+<<<<<<< HEAD
+=======
+.navbar .links ul li {
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
+  margin: 1em;
+}
+
+>>>>>>> d5248ee98db017029f1b88a3f344d5e6eae8c97d
 .logo {
     height: 176px;
     text-align: center;
     width:177px;
+<<<<<<< HEAD
+=======
+    margin-left: Calc(50% - 86.5px);
+}
+>>>>>>> d5248ee98db017029f1b88a3f344d5e6eae8c97d
 
 }
 .container{
