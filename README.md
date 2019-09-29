@@ -7,8 +7,8 @@
 * [2. O projeto](#2-resumo-do-projeto)
 * [3. O Objetivo ](#3-objetivos)
 * [4. A estrutura do projeto](#4-a-estrutura-do-projeto)
-* [5. Considerações técnicas](#5-considerações-técnicas)
-* [6. Autoria e considerações](#6-Autoria-e-considerações)
+* [5. Autoria e considerações](#6-Autoria-e-considerações)
+
 
 ***
 
@@ -26,7 +26,8 @@ O projeto visa auxiliar, informar e conscientizar o cliente sobre o mercado de t
 
 ### Veja o projeto:
 
-GOn
+https://genifergonzalezsantos.github.io/SAP003-data-lovers/src
+
 
 * O projeto só funciona em google chrome!
 
@@ -49,7 +50,7 @@ GOn
 * O botão de ordem crecente e decrescente ordenam os anos,
 * O botão de porcentagem de desempregados calcula através da médias de desempregadas na América do Sul.
 
-## 5. Guias, dicas e leituras complementares utilizados para o projeto:
 
-## 6.Autoria:
+## 5.Autoria:
+
 O projeto foi desenvolvido em dupla por @mariacarolinafs e @GeniferGonzalezSantos.
