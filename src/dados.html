@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="dados.css">
+  <title>FEMINIJOBS</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="img">
+      <img src="images/logodatalovers" class="logo" />
+      <a href="index.html"><img src="images/casaAzulClaro.png" alt="" class="home"></a>
+    </div>
+  </nav>
+  <main>
+    <div class="pais">
+      <form>
+        <select name="paises" id="paises">
+          <option value="selecione">Escolha o país</option>
+          <option value="BRA">Brasil</option>
+          <option value="PER">Peru</option>
+          <option value="CHL">Chile</option>
+          <option value="MEX">México</option>
+        </select>
+        <button type="button" id="crescente">Anos em ordem crescente</button>
+        <button type="button" id="decrescente">Anos em ordem decrescente</button>
+        <button type="button" id="media">Porcentagem de Desempregadas</button>
+      </form>
+    </div>
+    <div id="root"></div>
+    <div id="calculo"></div>
+    <script src="data/worldbank/worldbank.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
