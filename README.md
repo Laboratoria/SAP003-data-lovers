@@ -25,7 +25,7 @@ O projeto visa auxiliar, informar e conscientizar o cliente sobre o mercado de t
 
 ### Veja o projeto:
 
-https://genifergonzalezsantos.github.io/SAP003-data-lovers/srcgit addd.
+https://genifergonzalezsantos.github.io/SAP003-data-lovers/src
 
 * O projeto só funciona em google chrome!
 
