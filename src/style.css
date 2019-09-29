@@ -8,16 +8,26 @@ html {
 }
 
 body {
-
     background-color: #c8e6c9;
+    font-family: 'Rubik', sans-serif;
     margin-top: 208px;
     padding: 0px;
-    font-family: 'Rubik', sans-serif;
 }
 
 nav{
     background-color: #88c399;
     height: 11em;
+<<<<<<< HEAD
+    left: 0px;
+    position: fixed;
+    right: 0px;;
+    top: 0;
+}
+
+a {
+    color:#D9998B;
+    font-size: 1.2rem;
+=======
     position: fixed; 
     top: 0; 
     left: 0px; 
@@ -30,6 +40,7 @@ nav{
 ul, li,a {
     color: #F23D5E;
     font-size: 1.5rem;
+>>>>>>> d5248ee98db017029f1b88a3f344d5e6eae8c97d
     text-decoration: none;
     display:flex;
     align-items: center;
@@ -40,6 +51,8 @@ ul, li,a {
  
 }
 
+<<<<<<< HEAD
+=======
 .navbar .links ul li {
   align-items: center;
   list-style: none;
@@ -47,77 +60,53 @@ ul, li,a {
   margin: 1em;
 }
 
+>>>>>>> d5248ee98db017029f1b88a3f344d5e6eae8c97d
 .logo {
     height: 176px;
     text-align: center;
     width:177px;
+<<<<<<< HEAD
+=======
     margin-left: Calc(50% - 86.5px);
 }
+>>>>>>> d5248ee98db017029f1b88a3f344d5e6eae8c97d
 
-.h1 {
-    margin-top: 4%;
-    margin-bottom: 0%;
-    text-align: center;
 }
-form{
-    margin-top: 4%;
+.container{
+  display: grid;
+  padding: 10px;
+  width: 100%;
 }
-.form{
-    height: 63px;
-    margin-top: 4%;
+.col1, .col2, .col3{
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-template-columns: repeat(3, 1fr);
 }
+* {box-sizing: border-box;}
 
-.indice {
-    height: 100px;
-    margin: 15px;
-    text-align: center;
-    width: 50px;
-}
-
-#decrescente{
-    background:#D9998B;
-    border-radius: 10px;
-    border: none;
-    color: black;
-    cursor: pointer;
-    font-size: 1,2rem;
-    font-weight: bold;
-    padding: 15px;
-    margin: 5px;
-}
-  
-#paises{
-    background:#D9998B;
-    border-radius: 10px;
-    border: none;
-    color: black;
-    cursor: pointer;
-    font-size: 1,2rem;
-    font-weight: bold;
-    padding: 15px;
-    margin: 5px;
+.img1, .img2, .img3{
+  align-items: center;
+  border-radius: 35%;
+  height: 300px;
+  margin-top: 5px;
+  width: auto;
 }
 
-#crescente {
-    background:#D9998B;
-    border-radius: 10px;
-    border: none;
-    color: black;
-    cursor: pointer;
-    font-size: 1,2rem;
-    font-weight: bold;
-    padding: 15px;
-    margin: 5px;
+h2{
+  color: #F23D5E;
+  font-size: 2rem;
+  text-align: left;
 }
-section {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+p,h3{
+  color:#1C3D59;
+  font-size: 1.2em;
+  line-height: 1;
+  text-align: left;
 }
 
-p {
-    padding: 10px;
-    margin-left: 90px;
-    margin-right: 90px; 
-    font-size: 26px;
-}
+
+
+

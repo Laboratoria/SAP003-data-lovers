@@ -1,9 +1,10 @@
+
 const print = document.getElementById("root");
 const paises = document.getElementById("paises").addEventListener("change", escolhaPais);
 const decrescente = document.getElementById("decrescente").addEventListener("click", ordemDecrescente);
 const crescente = document.getElementById("crescente").addEventListener("click", ordemCrescente);
 
-function escolhaPais() {
+function escolhaPais(event) {
   event.preventDefault();
   print.innerHTML = "";
   const pais = document.getElementById("paises").value;
@@ -19,15 +20,18 @@ function escolhaPais() {
   });
 }
 
-function ordemDecrescente() {
+function ordemDecrescente(event) {
+  event.preventDefault();
   document.querySelectorAll('section').forEach(e => e.setAttribute('style', 'flex-direction: column-reverse'))
 }
 
-function ordemCrescente() {
+function ordemCrescente(event) {
+  event.preventDefault();
   document.querySelectorAll('section').forEach(e => e.setAttribute('style', 'flex-direction: column'))
 }
 
 document.getElementById("media").addEventListener("click", calculo);
-function calculo() {
-  document.getElementById("qualquer").innerHTML = data.calculo(WORLDBANK.BRA.indicators, "SL.UEM.TOTL.FE.ZS", "SP.POP.TOTL.FE.IN");
+function calculo(event) {
+  event.preventDefault();
+  document.getElementById("calculo").innerHTML = data.calculo(WORLDBANK.BRA.indicators, "SL.UEM.TOTL.FE.ZS", "SP.POP.TOTL.FE.IN");
 }

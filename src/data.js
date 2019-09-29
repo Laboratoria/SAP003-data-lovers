@@ -24,8 +24,6 @@ function pais(paisEscolhido) {
   });
   return arrNovo;
 }
-
-
 function calculo(arrayPais, indicatorDesemprego, indicatorPopulacao) {
   let somaDes = 0;
   arrayPais.map(i => {
@@ -49,5 +47,5 @@ function calculo(arrayPais, indicatorDesemprego, indicatorPopulacao) {
       }
     }
   });
-  return (somaDes / somaPop);
+  return (somaDes/somaPop)* 100;
 };

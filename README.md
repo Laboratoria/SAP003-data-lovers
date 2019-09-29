@@ -9,6 +9,7 @@
 * [4. A estrutura do projeto](#4-a-estrutura-do-projeto)
 * [5. Autoria e considerações](#6-Autoria-e-considerações)
 
+
 ***
 
 ## 1.Título
@@ -26,6 +27,7 @@ O projeto visa auxiliar, informar e conscientizar o cliente sobre o mercado de t
 ### Veja o projeto:
 
 https://genifergonzalezsantos.github.io/SAP003-data-lovers/src
+
 
 * O projeto só funciona em google chrome!
 
@@ -50,4 +52,5 @@ https://genifergonzalezsantos.github.io/SAP003-data-lovers/src
 
 
 ## 5.Autoria:
+
 O projeto foi desenvolvido em dupla por @mariacarolinafs e @GeniferGonzalezSantos.
