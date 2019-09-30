@@ -63,8 +63,8 @@ https://genifergonzalezsantos.github.io/SAP003-data-lovers/src
 
 ## 6. Protótipo de baixa fidelidade:
 
-![](/src/images/prototipo1(copy).jpg)
-![](/src/images/prototipo2(copy).jpg)
+![](/src/images/prototipo1.jpg)
+![](/src/images/prototipo2.jpg)
 
 ## 7. Listas de problemas detectados nos testes
 
