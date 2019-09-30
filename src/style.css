@@ -1,0 +1,109 @@
+body,
+html {
+  margin: 0;
+  /*
+    border: 5px solid yellow;
+    */
+  font-size: 16px;
+  color: black;
+  height: 100%;
+}
+
+header {
+  background: #0093DD;
+  height: 130px;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  letter-spacing: 5px;
+  font-size: 3em;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.triangle {
+  width: 0px;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-top: 30px solid #0093DD;
+  display: flex;
+  margin: auto;
+}
+
+footer {
+  background: #0093DD;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+.mainselection select {
+  border: 0;
+  color: white;
+  background: transparent;
+  font-size: 20px;
+  padding: 2px 10px;
+  width: 100%;
+  /*width: 378px;*/
+  background: #1C59BF;
+}
+
+.mainselection {
+  margin: 48px auto;
+  width: 60%;
+  background: #1C59BF;
+}
+
+.graphic {
+  width: 40%;
+  margin: auto auto;
+}
+
+#btn-see {
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 15px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  background-color: #1C59BF;
+  outline: none;
+  border: none;
+  font-style: bold;
+}
+
+.btn-submit {
+  text-align: center;
+}
+
+#btn-see:hover {
+  background: #1A21A6;
+}
+
+#btn-see:active {
+  background: #1C59BF;
+}
+
+#year-result {
+  font-size: 0.8em;
+  color: rgba(100, 154, 46, 1);
+}
+
+#average-result {
+  font-size: 0.8em;
+  color: rgba(8, 8, 138, 1);
+}
