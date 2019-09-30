@@ -31,6 +31,7 @@ function ordemCrescente(event) {
 }
 
 document.getElementById("media").addEventListener("click", calculo);
+
 function calculo(event) {
   event.preventDefault();
   document.getElementById("calculo").innerHTML = data.calculo(WORLDBANK.BRA.indicators, "SL.UEM.TOTL.FE.ZS", "SP.POP.TOTL.FE.IN");
