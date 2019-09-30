@@ -1,60 +1,109 @@
-/*
-body,html{
-  height: 100%;
+body,
+html {
   margin: 0;
-  font-family: "Ubuntu", sans-serif;
-  line-height: 180%;
-  color: #667;
+  /*
+    border: 5px solid yellow;
+    */
+  font-size: 16px;
+  color: black;
+  height: 100%;
+}
+
+header {
+  background: #0093DD;
+  height: 130px;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  letter-spacing: 5px;
+  font-size: 3em;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.triangle {
+  width: 0px;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-top: 30px solid #0093DD;
+  display: flex;
+  margin: auto;
+}
+
+footer {
+  background: #0093DD;
+  color: white;
+  padding: 5px;
   text-align: center;
 }
 
-.peru, .brasil, .mexico, .chile{
-  position: relative;
-  opacity: 0.8;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+.mainselection select {
+  border: 0;
+  color: white;
+  background: transparent;
+  font-size: 20px;
+  padding: 2px 10px;
+  width: 100%;
+  /*width: 378px;*/
+  background: #1C59BF;
 }
 
-.heading {
-  position: center;
-  color: black;
-  font-size: 250%;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  text-shadow: 0 0 5px gray;
+.mainselection {
+  margin: 48px auto;
+  width: 60%;
+  background: #1C59BF;
 }
 
-section{
-  overflow: auto;
-  padding: 50px 80px;
+.graphic {
+  width: 40%;
+  margin: auto auto;
 }
 
-.dark {
-  overflow: auto;
-  padding: 50px 80px;
-}
-
-.result{
-  background: white;
-  color: black;
-  margin: 5px;
-  border-radius: 20px;
-}
-
-option{
-  background: pink;
-}
-
-select{
-  width: 200px;
-  height: 40px;
+#btn-see {
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 15px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  background-color: #1C59BF;
+  outline: none;
   border: none;
-  border-radius: 20px;
+  font-style: bold;
 }
 
-#result{
-  background: white;
+.btn-submit {
+  text-align: center;
 }
-*/
+
+#btn-see:hover {
+  background: #1A21A6;
+}
+
+#btn-see:active {
+  background: #1C59BF;
+}
+
+#year-result {
+  font-size: 0.8em;
+  color: rgba(100, 154, 46, 1);
+}
+
+#average-result {
+  font-size: 0.8em;
+  color: rgba(8, 8, 138, 1);
+}
