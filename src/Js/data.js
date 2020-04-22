@@ -1,51 +1,86 @@
 
-data = {
-  pais,
-  calculo
-};
-
-const arrayIndicators = [
+const chosenIndicators = [
   "SL.TLF.TOTL.FE.ZS",
   "SL.UEM.TOTL.FE.ZS",
   "SL.EMP.TOTL.SP.FE.ZS",
   "SE.PRM.ENRL.FE.ZS",
   "SE.SEC.ENRL.FE.ZS",
-  "SE.TER.CUAT.ST.FE.ZS"
+  "SE.TER.CUAT.ST.FE.ZS",
 ];
 
-function pais(paisEscolhido) {
-  let arrNovo = [];
-  paisEscolhido.map(i => {
-    for (let indicador of arrayIndicators) {
-      if (indicador === i.indicatorCode) {
-        arrNovo.push({ code: indicador, anos: i.data, name: i.indicatorName });
-      }
-    }
-  });
-  return arrNovo;
+
+function showSelectCountry() {
+  let selectCountry = document.querySelector('.selectCountry').value;
+  const bank = WORLDBANK[selectCountry].indicators;
+  bank.map(name => name.countryName);
+  informationIndicators();
 }
-function calculo(arrayPais, indicatorDesemprego, indicatorPopulacao) {
-  let somaDes = 0;
-  arrayPais.map(i => {
-    if (i.indicatorCode === indicatorDesemprego) {
-      const arrayValores = Object.values(i.data);
-      for (let i of arrayValores) {
-        if (i != "") {
-          somaDes += i;
+
+
+function informationIndicators() {
+
+  const newIndicator = [];
+  WORLDBANK.BRA.indicators.filter(i => {
+
+    for (let indicator of chosenIndicators) {
+
+      if (indicator === i.indicatorCode) {
+        newIndicator.push( {
+           code: indicator, 
+           name: i.indicatorName, 
+           data: i.data,
+           pais: i.countryName, 
+          });
         }
-      }
     }
-  });
-  let somaPop = 0;
-  arrayPais.map(i => {
-    if (i.indicatorCode === indicatorPopulacao) {
-      const arrayValores = Object.values(i.data);
-      for (let i of arrayValores) {
-        if (i != "") {
-          somaPop += i;
-        }
-      }
-    }
-  });
-  return (somaDes / somaPop) * 100;
-};
+  })
+  return console.log(newIndicator)
+}
+
+
+
+
+
+function showTable() {
+
+  const template = `
+   <main>
+   <div class="container-table">
+   <table>
+     <thead>
+       <tr>
+         <th>Categoria</th>
+         <th>Ano</th>
+         <th>%</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>
+         <!--  nome  -->
+         </td>
+         <td>
+         <!--  data  -->
+         </td>
+         <td>
+           <!--  %  -->
+         </td>
+       </tr>
+     </tbody>
+     <tfoot>
+       <tr>
+         <td>
+           <!-- calculo da média/soma -->
+         </td>
+       </tr>
+     </tfoot>
+   </table>
+ </div>
+ </main>
+   `
+  return template;
+}
+
+document.getElementById('root').innerHTML = showTable();
+
+

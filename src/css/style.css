@@ -51,7 +51,7 @@ p{
   justify-content: center;
 }
 
-.select{
+.selectCountry, .selectOrder{
   background-color: #88c39971;
   height: 60px;
   width: 200px;

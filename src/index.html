@@ -21,8 +21,8 @@
       mulheres em alguns países da América do Sul e Central.
       O público alvo é, principalmente, aquelas que querem emigrar por esse continente. </p>
   </section>
-  <section class="filters">
-    <select class="select" required>
+  <section class="filters" >
+    <select class="selectCountry" onchange="showSelectCountry()" required>
       <!-- filtro paises -->
       <option value="Country">Pais</option>
       <option value="BRA">Brasil</option>
@@ -30,7 +30,7 @@
       <option value="CHL">Chile</option>
       <option value="MEX">México</option>
     </select>
-    <select class="select" required>
+    <select class="selectOrder" onchange="showSelectOrder()" required>
       <!-- filtro de ordem -->
       <option value="Order">Ordem</option>
       <option value="growing">Crescente</option>
@@ -41,40 +41,9 @@
       <!-- calculo ??-->
     </article>
   </section>
-  <main>
-    <div class="container-table">
-    <table>
-      <thead>
-        <tr>
-          <th>Categoria</th>
-          <th>Ano</th>
-          <th>%</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <!-- nome -->
-          </td>
-          <td>
-            <!-- ano -->
-          </td>
-          <td>
-            <!--  %  -->
-          </td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>
-            <!-- calculo da média/soma -->
-          </td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-  </main>
-  <div class="root"></div>
+ 
+  <div id="root"></div>
+
   <script src="data/worldbank/worldbank.js"></script>
   <script src="Js/data.js"></script>
   <script src="Js/main.js"></script>
