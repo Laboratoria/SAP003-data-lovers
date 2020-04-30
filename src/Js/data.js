@@ -8,40 +8,45 @@ const chosenIndicators = [
   "SE.TER.CUAT.ST.FE.ZS",
 ];
 
+const newIndicator = [];
 
 function showSelectCountry() {
   let selectCountry = document.querySelector('.selectCountry').value;
   const bank = WORLDBANK[selectCountry].indicators;
-  bank.map(name => name.countryName);
-  informationIndicators();
-}
 
-
-function informationIndicators() {
-
-  const newIndicator = [];
-  WORLDBANK.BRA.indicators.filter(i => {
-
+  bank.filter(i => {
     for (let indicator of chosenIndicators) {
-
       if (indicator === i.indicatorCode) {
-        newIndicator.push( {
-           code: indicator, 
-           name: i.indicatorName, 
-           data: i.data,
-           pais: i.countryName, 
-          });
+        newIndicator.push({
+          code: indicator,
+          name: i.indicatorName,
+          country: i.countryName,
+        });
+      }
+
+      for (let year in i.data) {
+        let percentForYear;
+        if (i.data[year] !== '') {
+          //console.log(i.data[year])
+          percentForYear = i.data[year].toString().slice(0, 5);
         }
+        newIndicator.push(percentForYear);
+        document.getElementById('root').innerHTML = showTable(i.indicatorName, percentForYear, 0)
+      }
     }
   })
-  return console.log(newIndicator)
+  //console.log(newIndicator);
+
+  return newIndicator
 }
 
 
 
 
 
-function showTable() {
+
+
+function showTable(name, data, percent) {
 
   const template = `
    <main>
@@ -56,14 +61,14 @@ function showTable() {
      </thead>
      <tbody>
        <tr>
-         <td>
-         <!--  nome  -->
+       <td>
+         ${name}
          </td>
          <td>
-         <!--  data  -->
+         ${data}
          </td>
          <td>
-           <!--  %  -->
+           ${percent}
          </td>
        </tr>
      </tbody>
@@ -81,6 +86,5 @@ function showTable() {
   return template;
 }
 
-document.getElementById('root').innerHTML = showTable();
 
 

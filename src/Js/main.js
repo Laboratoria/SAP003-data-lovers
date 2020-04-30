@@ -1,2 +1,4 @@
-document.querySelector('.selectCountry').addEventListener('change', showSelectCountry());
+
+document.querySelector('.selectCountry').addEventListener('change',showSelectCountry());
+
 
