@@ -25,13 +25,21 @@ header{
   width: 100%;
 }
 
-h1{
+h1 {
 color:#1C3D59;
 font-size: 2em;
 margin: 15px;
 padding: 10px;
 font-weight: bold;
 margin-bottom: 2px;
+}
+
+h2 {
+  margin: 15px 10px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 0.7em;
+  line-height: initial;
 }
 
 p{
@@ -56,7 +64,7 @@ p{
   height: 60px;
   width: 200px;
   border-radius: 3px;
-  margin: 50px;  
+  margin: 15px;  
   font-size: 1.2em;
   font-weight: bold;
   color:#1C3D59;
@@ -65,13 +73,15 @@ p{
 
 .container-table {
   overflow-y: auto;
-  margin: 30px;
+  margin: 15px 50px;
 }
 
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   border: 1px solid black;
-  width: 100%;  
+  border-radius: 10px; 
+  width: 50%;
 }
 
 th, td {
@@ -83,66 +93,16 @@ th, td {
 
 th {
   background-color: #abccb4;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
 }
 
 td {
-  text-align: left;  
+  text-align: center;  
   vertical-align: bottom;
+  font-size: 1.8em;
 }
 
 tr:hover {
   background-color: #88c39971;
 }
-
-
-
-/* 
-a {
-    font-size: 1.2rem;
-    text-decoration: none;
-    display:flex;
-    align-items: center;
-    font-weight: bold;
-}
-.links{
-    display: flex;
-
-}
-
-
-.container{
-  display: grid;
-  padding: 10px;
-  width: 100%;
-}
-.col1, .col2, .col3{
-  display: grid;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  grid-template-columns: repeat(3, 1fr);
-}
-* {box-sizing: border-box;}
-
-.img1, .img2, .img3{
-  align-items: center;
-  border-radius: 35%;
-  height: 300px;
-  margin-top: 5px;
-  width: auto;
-}
-
-h2{
-  color: #F23D5E;
-  font-size: 2rem;
-  text-align: left;
-}
-
-
-
-
-
- */
