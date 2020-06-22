@@ -8,98 +8,41 @@ const chosenIndicators = [
   "SE.TER.CUAT.ST.FE.ZS",
 ];
 
-function showData(data) {
-  const fullYears = Object.entries(data);
-   //console.log(fullYears);
-
-  const filterData = fullYears.filter(data => {
-    const [year, valueYear] = data;
-    //console.log(data);
-    return valueYear !== '';
-
-  });
-  return filterData.reduce((acc, item) => {
-    const [year, valueYear] = item;
-    acc[year] = valueYear;
-    return console.log(acc)
-  }, {});
-};
 
 function showSelectCountry() {
+
   const selectCountry = document.querySelector('.selectCountry').value;
-  if (selectCountry === 'Country') {
-    document.getElementById('root').innerHTML = '';
-    return
-  };
-  const bank = WORLDBANK[selectCountry].indicators;
-  const getData = bank
-    .filter(item => chosenIndicators.includes(item.indicatorCode))
-    .map(item => {
-      return {
-        name: item.indicatorName,
-        data: item.data,
-      };
-    })
-    .map(item => ({
-      name: item.name,
-      data: showData(item.data)
-    }));
+  const getDataFromBank = WORLDBANK[selectCountry].indicators;
 
-  document.getElementById('root').innerHTML = showTable(getData);
-}
+  window.filterData = getDataFromBank.filter(el => chosenIndicators.includes(el.indicatorCode))
+    .map(info => {
+      const clearedData = Object.entries(info.data).reduce((dataArr, curr) => {
+        return (curr[1] !== '')
+          ? [...dataArr, { year: curr[0], value: curr[1] }]
+          : dataArr
+      }, []);
+      return { ...info, data: clearedData }
+    });
+  document.getElementById('root').innerHTML = repeatTable(filterData);
 
-function showTable(categories) {
+};
 
-  const template = `
-  <main>
-  <div class="container-table">
-  ${categories.map(category => showComponents(category))}
-  </div>
-  </main>
-   `;
-  return template;
-}
-
-function showLine(data) {
-  return Object.entries(data).map(([year, valueYear]) => {
-    console.log(data);
-    
-    return `<tr>
-    <td>${year}</td>
-    <td>${valueYear.toFixed(2)}</td>
-    </tr>`;
-  });
+function showSelectOrder(event) {
+  event.preventDefault();
+  const selectOrder = document.querySelector('.selectOrder').value;
+  const data = filterData.map(d => d.data);
+  
+  selectOrder !== "growing" ? data.reverse() : data.sort() ;
  
+  return data;
 }
 
 
 
-function showComponents(categories) {
 
-  const template = `
-<h2>${categories.name}</h2>
-<div class='div-table'>
-  <table>
-      <thead>
-        <tr>
-          <th>Ano</th>
-          <th>%/Ano</th>
-        </tr>
-      </thead>
-      <tbody>
-      ${showLine(categories.data).join('')}
-      </tbody>
-      <tfoot>
-        <tr>
-          <th>Média total</th>
-          <th>
-            <!-- calculo da média/soma -->
-          </th>
-        </tr>
-      </tfoot>
-    </table>
-  </div>`
 
-  return template
-}
+
+
+
+
 
