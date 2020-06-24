@@ -27,15 +27,65 @@ function showSelectCountry() {
 
 };
 
-function showSelectOrder(event) {
-  event.preventDefault();
+
+
+function showSelectOrder() {
   const selectOrder = document.querySelector('.selectOrder').value;
-  const data = filterData.map(d => d.data);
-  
-  selectOrder !== "growing" ? data.reverse() : data.sort() ;
- 
-  return data;
+    selectOrder == 'decreasing'  ?
+      window.xuxu.sort((a, b) => {
+        if (a.year > b.year) {
+          return -1;
+        }
+        if (a.year < b.year) {
+          return 1;
+        }
+        return 0;
+      }) : true
+    
+    //console.log(categoryData);
+    
+     
+
 }
+
+
+// function showSelectOrder() {
+//   const selectOrder = document.querySelector('.selectOrder').value;
+//   const order = filterData.map(d => d.data)
+//   for (let i = 0; i <= order.length; i++) {  
+//     for (let j = 0; j <= order[i].length; j++) {
+//       const data =  order[j].map(item => item.year);
+//       if( selectOrder === 'decreasing'){
+//         data.reverse()
+//       } else{
+//         data.sort()
+//       }
+//        return data;
+
+//     }
+
+//   }
+// }
+
+// function showSelectOrder() {
+//   const selectOrder = document.querySelector('.selectOrder').value;
+//   const order = filterData.map(d => d.data)
+//   for (let i = 0; i <= order.length; i++) { 
+//     if (selectOrder != "decreasing") {
+//       for (let j = 0; j < order[i].length; j++) {
+//         console.log(order[j].map(item => item.year));        
+//       }
+
+//     } else {
+//       for (let k =order[i]; k >= 0; k--) {
+//         console.log(order[k].map(item => item.year).reverse()); 
+//       }
+
+//     }
+//   }
+// }
+
+
 
 
 
