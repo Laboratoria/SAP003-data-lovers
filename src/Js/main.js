@@ -31,9 +31,8 @@ function showTable(category) {
         </tr>
       </thead>
       <tbody>
-      ${xuxu.map(item => {
-        console.log(showSelectOrder());
-        
+      ${console.log(window.categoryData),xuxu.map(item => {
+    
     return `<tr>
         <td>${item.year}</td>
         <td>${item.value.toFixed(2)}</td>

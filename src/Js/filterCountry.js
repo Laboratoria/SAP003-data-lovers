@@ -31,6 +31,7 @@ function showSelectCountry() {
 
 function showSelectOrder() {
   const selectOrder = document.querySelector('.selectOrder').value;
+  window.categoryData =
     selectOrder == 'decreasing'  ?
       window.xuxu.sort((a, b) => {
         if (a.year > b.year) {
@@ -43,6 +44,7 @@ function showSelectOrder() {
       }) : true
     
     //console.log(categoryData);
+    return categoryData
     
      
 
