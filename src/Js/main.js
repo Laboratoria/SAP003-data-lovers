@@ -1,7 +1,6 @@
 document.querySelector('.selectCountry').addEventListener('change', showSelectCountry());
 document.querySelector('.selectOrder').addEventListener('change', showSelectOrder());
 
-
 function repeatTable(categories) {
   const template = `
    <main>
@@ -13,44 +12,40 @@ function repeatTable(categories) {
   return template;
 };
 
-
-
 function showTable(category) {
-  window.xuxu = category.data;
-  
+
   const template = `
   <h2>
   ${category.indicatorName}
-</h2>
-<div class='div-table'>
-  <table>
-      <thead>
-        <tr>
-          <th>Ano</th>
-          <th>%/Ano</th>
-        </tr>
-      </thead>
-      <tbody>
-      ${console.log(window.categoryData),xuxu.map(item => {
-    
+  </h2>
+  <div class='div-table'>
+    <table>
+        <thead>
+          <tr>
+            <th>Ano</th>
+            <th>%/Ano</th>
+          </tr>
+        </thead>
+        <tbody>
+        ${category.data.map(item => {
     return `<tr>
-        <td>${item.year}</td>
-        <td>${item.value.toFixed(2)}</td>
-        </tr>`;
+          <td>${item.year}</td>
+          <td>${item.value.toFixed(2)}</td>
+          </tr>`;
   }).join('')
     }
-      </tbody>
-      <tfoot>
-        <tr>
-          <th>Média total</th>
-          <th>
-            <!-- calculo da média/soma -->
-          </th>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-`
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Média total</th>
+            <th>
+             ${AverageYears(category.data)}
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  `
   return template
 };
 
