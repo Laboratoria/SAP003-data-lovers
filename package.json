@@ -14,12 +14,7 @@
     "eslint": "^5.9.0",
     "eslint-plugin-jest": "^22.1.2",
     "htmlhint": "^0.10.1",
+    "jest": "^25.0.0",
     "serve": "^11.0.0"
-  },
-  "devDependencies": {
-    "jest": "^25.5.4"
-  },
-  "script": {
-    "test": "jest"
   }
 }
